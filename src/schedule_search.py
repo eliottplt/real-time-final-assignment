@@ -1,5 +1,18 @@
+import subprocess
+
+# Compile C++
+subprocess.run(["g++", "src/task1.cpp", "-O2", "-o", "task1"], check=True)
+
+# Execute and capture WCET
+result = subprocess.run(["./task1"], capture_output=True, text=True)
+
+lines = result.stdout.strip().split("\n")
+wcet_value = float(lines[-1])
+
+print("WCET from C++:", wcet_value)
+
 tasks = [
-    ("t1", 0.022, 10),
+    ("t1", wcet_value, 10),
     ("t2", 3, 10),
     ("t3", 2, 20),
     ("t4", 2, 20),

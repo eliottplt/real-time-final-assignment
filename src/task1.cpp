@@ -67,7 +67,7 @@ int main() {
     std::cout << "Median Q2: " << q2 << " s" << std::endl;
     std::cout << "Q3: " << q3 << " s" << std::endl;
     std::cout << "Max: " << maximum << " s" << std::endl;
-    std::cout << "WCET with 20% margin: " << wcet << " s" << std::endl;
+    std::cout << wcet << std::endl;
 
     return 0;
 }
